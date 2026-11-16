@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Churrascaria Dom Rocha | São José do Rio Preto</title>
+<meta name="description" content="Restaurante Churrascaria Dom Rocha em São José do Rio Preto - SP. Refeição no local, retirada na porta e entrega sem contato. Av. Murchid Homsi, 2440.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* FOTOS: coloque na MESMA pasta do index.html (em .png, .jpg, .jpeg ou .webp):
+   foto-topo (fundo do topo), foto-casa (arco da seção "A casa"), foto-1 até foto-6 (galeria).
+   O site usa sozinho as que existirem. Sem foto, a galeria some. */
+:root{--carvao:#14100e;--carvao2:#241b17;--brasa:#d9481c;--brasa2:#f26a2e;--ouro:#e6b34a;--creme:#f6ede0;--papel:#ece0cc;--tinta:#201815}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',system-ui,sans-serif;background:var(--creme);color:var(--tinta);line-height:1.65;font-size:17px}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:800;text-transform:uppercase;line-height:1.02;letter-spacing:.01em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(20,16,14,.95);backdrop-filter:blur(8px);border-bottom:3px solid var(--brasa)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:30px;text-transform:uppercase;letter-spacing:.06em;color:var(--creme);text-decoration:none}
+.logo span{color:var(--brasa2)}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a{color:#eadfcd;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+nav a:hover{color:var(--ouro)}
+.menu-btn{display:none;background:none;border:1px solid var(--ouro);color:var(--creme);padding:8px 14px;border-radius:6px;font:inherit;cursor:pointer}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:var(--creme);overflow:hidden;background:
+ radial-gradient(900px 520px at 85% 100%,rgba(217,72,28,.55),transparent 62%),
+ radial-gradient(600px 400px at 100% 0%,rgba(230,179,74,.18),transparent 60%),
+ repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 3px,transparent 3px 34px),
+ linear-gradient(170deg,#0d0a09 0%,#1c1411 65%,#2b1710 120%)}
+.hero::before{content:"";position:absolute;inset:0;background:var(--hero-img,none) center/cover no-repeat;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,10,9,.92) 0%,rgba(13,10,9,.45) 70%,rgba(13,10,9,.25) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:90px}
+.selo{display:inline-flex;gap:12px;align-items:center;border:1px solid rgba(230,179,74,.7);padding:10px 18px;border-radius:999px;font-size:15px;margin-bottom:24px;background:rgba(13,10,9,.55)}
+.stars{color:var(--ouro);letter-spacing:2px}
+.hero h1{font-size:clamp(66px,13vw,168px);letter-spacing:.005em}
+.hero h1 em{display:block;font-style:normal;font-size:.3em;color:var(--brasa2);letter-spacing:.14em;margin-top:8px}
+.hero p.lead{max-width:50ch;margin:22px 0 32px;font-size:19px;font-weight:300;color:#f1e6d4}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;text-decoration:none;padding:15px 30px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:.08em;text-transform:uppercase;border:2px solid transparent;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--brasa);color:#fff}.btn-main:hover{background:var(--brasa2)}
+.btn-line{border-color:var(--ouro);color:var(--creme)}.btn-line:hover{background:rgba(230,179,74,.18)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.chips span{font-size:14px;padding:6px 14px;border-radius:999px;background:rgba(246,237,224,.1);border:1px solid rgba(246,237,224,.3)}
+section{padding:105px 0}
+.titulo{font-size:clamp(44px,6.4vw,78px);color:var(--brasa);margin-bottom:20px}
+.sobre{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center}
+.sobre p{margin-bottom:18px;max-width:52ch}
+.valor{display:inline-block;margin-top:6px;padding:12px 22px;border:2px solid var(--carvao);border-radius:8px;background:var(--papel)}
+.valor b{font-family:'Barlow Condensed',sans-serif;font-size:34px;color:var(--brasa);font-weight:800}
+.valor small{display:block;font-size:13.5px;color:#6a5a50}
+.moldura{aspect-ratio:4/5;border-radius:220px 220px 12px 12px;background:linear-gradient(180deg,#3a2a22,var(--carvao));display:grid;place-items:center;color:var(--brasa2);position:relative;overflow:hidden;border:6px solid var(--papel);box-shadow:0 0 0 2px var(--brasa)}
+.moldura svg{width:46%}
+.moldura .sel{position:absolute;bottom:26px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:24px;color:var(--creme);text-align:center;padding:0 20px}
+.moldura.tem-foto{background-size:cover;background-position:center}
+.moldura.tem-foto svg,.moldura.tem-foto .sel{display:none}
+.galeria{background:var(--papel);display:none}
+.galeria.ativa{display:block}
+.galeria .intro{max-width:56ch;margin-bottom:38px}
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grade a{display:none;aspect-ratio:1;border-radius:8px;background:center/cover no-repeat;border:2px solid var(--carvao);transition:transform .25s}
+.grade a.on{display:block}
+.grade a:hover{transform:scale(1.02)}
+.pedido{background:var(--carvao);color:var(--creme);text-align:center;position:relative}
+.pedido .titulo{color:var(--brasa2)}
+.pedido p{max-width:56ch;margin:0 auto 14px;font-weight:300;font-size:19px;color:#e8dac4}
+.nota{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;max-width:860px;margin:0 auto}
+.nota .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(100px,16vw,190px);color:var(--brasa);line-height:.85}
+.nota .stars{font-size:26px}
+.nota p{color:#52443b}
+.contato{background:var(--brasa);color:#fff}
+.contato .titulo{color:#fff;text-align:center;margin-bottom:46px}
+.grid-contato{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:start}
+.mapa{width:100%;height:430px;border:0;border-radius:10px;background:#d8cdb8;display:block}
+.info div{margin-bottom:26px}
+.info h3{font-size:32px;margin-bottom:2px;color:var(--carvao)}
+.info p,.info a{font-size:18px;font-weight:400;text-decoration:none}
+.info a.tel{border-bottom:1px solid rgba(255,255,255,.6)}
+.horarios{width:100%;border-collapse:collapse;font-size:17px}
+.horarios td{padding:5px 0}.horarios td:last-child{text-align:right;font-weight:600}
+.info small{display:block;margin-top:8px;font-size:14.5px;opacity:.9}
+.contato .btn-main{background:var(--carvao)}.contato .btn-main:hover{background:#2c211c}
+.contato .btn-line{border-color:#fff;color:#fff}
+footer{background:#0d0a09;color:#bfae98;text-align:center;padding:34px 24px 110px;font-size:14.5px}
+footer b{color:var(--creme);font-family:'Barlow Condensed',sans-serif;font-size:26px;letter-spacing:.08em;text-transform:uppercase}
+.flutuantes{position:fixed;right:0;bottom:90px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.flutuantes a{padding:13px 22px 13px 20px;border-radius:999px 0 0 999px;color:#fff;font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.f1{background:#1a8f4c}.f2{background:var(--brasa)}
+.barra-mobile{display:none}
+@media (prefers-reduced-motion:no-preference){
+ .hero .wrap>*{animation:sobe .9s cubic-bezier(.2,.7,.2,1) both}
+ .hero .wrap>*:nth-child(2){animation-delay:.12s}.hero .wrap>*:nth-child(3){animation-delay:.24s}
+ .hero .wrap>*:nth-child(4){animation-delay:.36s}.hero .wrap>*:nth-child(5){animation-delay:.48s}
+ @keyframes sobe{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}}
+@media (max-width:860px){
+ body{font-size:16.5px}section{padding:74px 0}
+ .menu-btn{display:block}
+ nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--carvao);padding:8px 24px 18px;border-bottom:3px solid var(--brasa)}
+ nav ul.aberto{display:flex}
+ nav li a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+ .sobre,.grid-contato{grid-template-columns:1fr;gap:40px}
+ .moldura{max-width:380px;margin:0 auto;width:100%}
+ .grade{grid-template-columns:repeat(2,1fr)}
+ .nota{grid-template-columns:1fr;gap:12px;text-align:center}
+ .mapa{height:320px}
+ .flutuantes{display:none}
+ .barra-mobile{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:10px;padding:10px;background:var(--carvao);border-top:3px solid var(--brasa)}
+ .barra-mobile a{flex:1;text-align:center;padding:13px 6px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:#fff}
+ .barra-mobile .a1{background:#1a8f4c}.barra-mobile .a2{background:var(--brasa)}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#inicio" aria-label="Dom Rocha – início">Dom <span>Rocha</span></a>
+  <button class="menu-btn" id="mb" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav aria-label="Principal"><ul id="menu">
+    <li><a href="#sobre">A casa</a></li><li id="lg" style="display:none"><a href="#galeria">Fotos</a></li>
+    <li><a href="#pedido">Pedidos</a></li><li><a href="#avaliacoes">Avaliações</a></li><li><a href="#contato">Contato</a></li>
+  </ul></nav>
+</div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="wrap">
+  <div class="selo"><span class="stars" aria-hidden="true">★★★★★</span><span>4,6 · 325 avaliações no Google</span></div>
+  <h1>Dom Rocha<em>Churrascaria · São José do Rio Preto</em></h1>
+  <p class="lead">Churrascaria no Parque Quinta das Paineiras, com refeição no local, retirada na porta e entrega sem contato.</p>
+  <div class="btns">
+    <a class="btn btn-main" data-zap="Olá! Gostaria de fazer um pedido na Dom Rocha." href="https://wa.me/5517982121546" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+    <a class="btn btn-line" href="#contato">Como chegar</a>
+  </div>
+  <div class="chips"><span>Refeição no local</span><span>Retirada na porta</span><span>Entrega sem contato</span></div>
+</div></section>
+
+<section id="sobre"><div class="wrap sobre">
+  <div>
+    <h2 class="titulo">A casa</h2>
+    <p>A Dom Rocha é uma churrascaria em São José do Rio Preto, na Avenida Murchid Homsi, no Parque Quinta das Paineiras.</p>
+    <p>Você pode comer no local, retirar o pedido na porta ou receber com entrega sem contato. Funciona no horário do almoço.</p>
+    <div class="valor"><b>R$ 40–60</b><small>por pessoa, valor informado por clientes no Google</small></div>
+  </div>
+  <div class="moldura" id="moldura" role="img" aria-label="Ilustração de espeto de churrasco">
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 82 82 18M74 12l14 14"/><rect x="30" y="44" width="16" height="14" rx="4" transform="rotate(-45 38 51)"/><rect x="46" y="28" width="16" height="14" rx="4" transform="rotate(-45 54 35)"/><rect x="14" y="60" width="16" height="14" rx="4" transform="rotate(-45 22 67)"/></svg>
+    <div class="sel">Boa carne, bom almoço</div>
+  </div>
+</div></section>
+
+<section class="galeria" id="galeria"><div class="wrap">
+  <h2 class="titulo">Fotos</h2>
+  <p class="intro">Um pouco da casa e dos pratos.</p>
+  <div class="grade" id="grade"><a></a><a></a><a></a><a></a><a></a><a></a></div>
+</div></section>
+
+<section class="pedido" id="pedido"><div class="wrap">
+  <h2 class="titulo">Faça seu pedido</h2>
+  <p>Peça o cardápio e os valores pelo WhatsApp. Retire na porta ou receba com entrega sem contato.</p>
+  <div style="margin-top:30px"><a class="btn btn-main" data-zap="Olá! Poderia me enviar o cardápio?" href="https://wa.me/5517982121546" target="_blank" rel="noopener">Pedir o cardápio</a></div>
+</div></section>
+
+<section id="avaliacoes"><div class="wrap nota">
+  <div class="num">4,6</div>
+  <div>
+    <div class="stars" aria-hidden="true">★★★★★</div>
+    <h2 class="titulo" style="font-size:clamp(36px,5vw,56px);margin:8px 0 10px">Nota dos clientes no Google</h2>
+    <p>Mais de 300 pessoas avaliaram a Dom Rocha no Google Maps, com nota média de 4,6 em 5.</p>
+    <p style="margin-top:18px"><a class="btn btn-main" href="https://www.google.com/maps/search/?api=1&query=Churrascaria+Dom+Rocha+S%C3%A3o+Jos%C3%A9+do+Rio+Preto" target="_blank" rel="noopener">Ver avaliações no Google</a></p>
+  </div>
+</div></section>
+
+<section class="contato" id="contato"><div class="wrap">
+  <h2 class="titulo">Contato</h2>
+  <div class="grid-contato">
+    <iframe class="mapa" title="Mapa da Churrascaria Dom Rocha" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+Murchid+Homsi,+2440,+S%C3%A3o+Jos%C3%A9+do+Rio+Preto+-+SP,+15080-325&output=embed"></iframe>
+    <div class="info">
+      <div><h3>Endereço</h3>
+        <p>Av. Murchid Homsi, 2440<br>Parque Quinta das Paineiras<br>São José do Rio Preto – SP, 15080-325</p>
+        <p style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&query=Av.+Murchid+Homsi,+2440,+S%C3%A3o+Jos%C3%A9+do+Rio+Preto+-+SP" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,255,255,.6)">Abrir no Google Maps</a></p></div>
+      <div><h3>Telefone e WhatsApp</h3><p><a class="tel" href="tel:+5517982121546">(17) 98212-1546</a></p></div>
+      <div><h3>Horário</h3>
+        <table class="horarios">
+          <tr><td>Segunda a quinta</td><td>10h30 às 14h30</td></tr>
+          <tr><td>Sexta a domingo</td><td>Consulte pelo WhatsApp</td></tr>
+        </table>
+        <small>Em feriados os horários podem ser diferentes. Confirme pelo WhatsApp.</small></div>
+      <div class="btns">
+        <a class="btn btn-main" data-zap="Olá! Gostaria de mais informações." href="https://wa.me/5517982121546" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-line" href="tel:+5517982121546">Ligar</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><b>Dom Rocha</b><br>Churrascaria · São José do Rio Preto – SP<br>© <span id="ano"></span> Churrascaria Dom Rocha</footer>
+
+<div class="flutuantes">
+  <a class="f1" data-zap="Olá! Gostaria de fazer um pedido." href="https://wa.me/5517982121546" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="f2" href="tel:+5517982121546">Ligar</a>
+</div>
+<div class="barra-mobile">
+  <a class="a1" data-zap="Olá! Gostaria de fazer um pedido." href="https://wa.me/5517982121546" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="a2" href="tel:+5517982121546">Ligar</a>
+</div>
+
+<script>
+document.getElementById('ano').textContent=new Date().getFullYear();
+document.querySelectorAll('[data-zap]').forEach(function(a){a.href='https://wa.me/5517982121546?text='+encodeURIComponent(a.getAttribute('data-zap'))});
+var mb=document.getElementById('mb'),mn=document.getElementById('menu');
+mb.addEventListener('click',function(){var o=mn.classList.toggle('aberto');mb.setAttribute('aria-expanded',o)});
+mn.addEventListener('click',function(e){if(e.target.tagName==='A'){mn.classList.remove('aberto');mb.setAttribute('aria-expanded',false)}});
+var EXT=['.png','.jpg','.jpeg','.webp',''];
+function achar(bases,ok){var l=[];bases.forEach(function(b){EXT.forEach(function(e){l.push(b+e)})});var i=0;(function t(){if(i>=l.length)return;var im=new Image(),u=l[i++];im.onload=function(){ok(u)};im.onerror=t;im.src=u})()}
+achar(['foto-topo','fototopo'],function(u){document.getElementById('inicio').style.setProperty('--hero-img','url("'+u+'")')});
+achar(['foto-casa','fotocasa'],function(u){var m=document.getElementById('moldura');m.style.backgroundImage='url("'+u+'")';m.classList.add('tem-foto')});
+document.querySelectorAll('#grade a').forEach(function(a,k){var n=k+1;achar(['foto-'+n,'foto'+n],function(u){a.style.backgroundImage='url("'+u+'")';a.href=u;a.target='_blank';a.classList.add('on');document.getElementById('galeria').classList.add('ativa');document.getElementById('lg').style.display=''})});
+</script>
+</body>
+</html>
